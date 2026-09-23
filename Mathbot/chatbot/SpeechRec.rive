@@ -1,0 +1,291 @@
+! version = 2.0
+
+! local concat = newline
+
+
+//-Προσθεση 2nd
++ [*] (#) p * (plus|and) * p (#) [*] {weight=100} //5.4 plus 6.8
+
+-<call>Calculator <star2> <star3> <star4> <star5> <star6></call>
+
+//-Προσθεση 3nd
++ [*] (#) (plus|and) * p (#) [*] {weight=100} // 5 plus 6.8
+
+-<call>Calculator <star2> null <star3> <star4> <star5></call>
+
+//-Προσθεση 4nd
++ [*] (#) p * (plus|and) * [*] {weight=100} // 5.4 plus 8
+
+-<call>Calculator <star2> <star3> <star4> <star5> null</call>
+
+//
+//	ΕΛΛΗΝΙΚΑ
+//
+	//-Προσθεση 2nd
+	+ [*] (#) p * (συν|σύν|και) * p (#) [*] {weight=100} //5.4 plus 6.8  5.4 και 6.8
+
+	-<call>Calculator <star2> <star3> <star4> <star5> <star6></call>
+
+	//-Προσθεση 3nd
+	+ [*] (#) (συν|σύν|και) * p (#) [*] {weight=100} // 5 και 6.8
+
+	-<call>Calculator <star2> null <star3> <star4> <star5></call>
+
+	//-Προσθεση 4nd
+	+ [*] (#) p * (συν|σύν|και) * [*] {weight=100} // 5.4 και 8
+
+	-<call>Calculator <star2> <star3> <star4> <star5> null</call>
+//
+//	ΕΛΛΗΝΙΚΑ
+//
+
+
+
+
+//-Aφαιρεση 2nd
++ [*] (#) p * (minus) * p (#) [*] {weight=100} //5.4 minus 6.8
+
+-<call>Calculator <star2> <star3> <star4> <star5> <star6></call>
+
+//-Aφαιρεση 3nd
++ [*] (#) (minus) * p (#) [*] {weight=100} //5 minus 6.8 ===> Error here!!!!!
+
+-<call>Calculator <star2> null <star3> <star4> <star5></call>
+
+//-Aφαιρεση 4nd
++ [*] (#) p * (minus) * [*] {weight=100} //8.5 minus 6
+
+-<call>Calculator <star2> <star3> <star4> <star5> null</call>
+
+//
+//	ΕΛΛΗΝΙΚΑ
+//
+	//-Aφαιρεση 2nd
+	+ [*] (#) p * (πλην|πλήν|μιον|μίον) * p (#) [*] {weight=100} //5.4 μιον 6.8
+
+	-<call>Calculator <star2> <star3> <star4> <star5> <star6></call>
+
+	//-Aφαιρεση 3nd
+	+ [*] (#) (πλην|πλήν|μιον|μίον) * p (#) [*] {weight=100} //5 μιον 6.8
+
+	-<call>Calculator <star2> null <star3> <star4> <star5></call>
+
+	//-Aφαιρεση 4nd
+	+ [*] (#) p * (πλην|πλήν|μιον|μίον) * [*] {weight=100} //5.4 μιον 6
+
+	-<call>Calculator <star2> <star3> <star4> <star5> null</call>
+
+//
+//	ΕΛΛΗΝΙΚΑ
+//
+
+//-Πολλαπλασιασμος 2nd
++ [*] (#) p * (times) * p (#) [*] {weight=100} //5.4 times 6.8
+
+-<call>Calculator <star2> <star3> <star4> <star5> <star6></call>
+
+//-Πολλαπλασιασμος 3nd
++ [*] (#) (times) * p (#) [*] {weight=100} //5 times 6.8
+
+-<call>Calculator <star2> null <star3> <star4> <star5></call>
+
+//-Πολλαπλασιασμος 4nd
++ [*] (#) p * (times) * [*] {weight=100} //5.4 times 6
+
+-<call>Calculator <star2> <star3> <star4> <star5> null</call>
+
+//
+//	ΕΛΛΗΝΙΚΑ
+//
+	//-Πολλαπλασιασμος 2nd  // 5.4 επι 6.8 //5.4 φορές 6.8
+	+ [*] (#) p * (επί|επι|φορές|φορες) * p (#) [*] {weight=100} //5.4 φορές το 6.8
+
+	-<call>Calculator <star2> <star3> <star4> <star5> <star6></call>
+
+	//-Πολλαπλασιασμος 3nd
+	+ [*] (#) (επί|επι|φορές|φορες) * p (#) [*] {weight=100} //5 επι 6.8
+
+	-<call>Calculator <star2> null <star3> <star4> <star5></call>
+
+	//-Πολλαπλασιασμος 4nd
+	+ [*] (#) p * (επί|επι|φορές|φορες) * [*] {weight=100} //5.4 επι 6
+
+	-<call>Calculator <star2> <star3> <star4> <star5> null</call>
+
+//
+//	ΕΛΛΗΝΙΚΑ
+//
+//-Διαίρεση 2nd
++ [*] (#) p * (div) * p (#) [*] {weight=100} //5.4 div 6.8
+
+-<call>Calculator <star2> <star3> <star4> <star5> <star6></call>
+
+//-Διαιρεση 3nd
++ [*] (#) (div) * p (#) [*] {weight=100} //5 div 6.8
+
+-<call>Calculator <star2> null <star3> <star4> <star5></call>
+
+//-Διαιρεση 4nd
++ [*] (#) p * (div) * [*] {weight=100} //5.4 div 6
+
+-<call>Calculator <star2> <star3> <star4> <star5> null</call>
+//
+//	ΕΛΛΗΝΙΚΑ
+//
+	//-Διαίρεση 2nd
+	+ [*] (#) p * (διά|δια) * p (#) [*] {weight=100} //5.4 δια 6.8
+
+	-<call>Calculator <star2> <star3> <star4> <star5> <star6></call>
+
+	//-Διαιρεση 3nd
+	+ [*] (#) (διά|δια) * p (#) [*] {weight=100} //5 δια 6.8
+
+	-<call>Calculator <star2> null <star3> <star4> <star5></call>
+
+	//-Διαιρεση 4nd
+	+ [*] (#) p * (διά|δια) * [*] {weight=100} //5.4 δια 6
+
+	-<call>Calculator <star2> <star3> <star4> <star5> null</call>
+
+//
+//	ΕΛΛΗΝΙΚΑ
+//
+> object Calculator javascript
+	var Star1 = String(args[0]);  
+	var Star2 = String(args[1]);
+	var Oper  = String(args[2]);
+	var Star3 = String(args[3]);
+	var Star4 = String(args[4]);
+if(Star2=="null"){
+//alert("Rive 000 Star2 was null= "+Star2);
+	var RiveStrA=Star1+".0";
+	var RiveStrB=Star3+"."+Star4;
+	RiveStrA=Big(RiveStrA);
+	RiveStrB=Big(RiveStrB);
+	//alert("RiveStrA= "+RiveStrA);
+}else if(Star4=="null"){
+//alert("Rive 000 Star4 was null= "+Star4);
+	var RiveStrA=Star1+"."+Star2;
+	var RiveStrB=Star3;
+	RiveStrA=Big(RiveStrA);
+	RiveStrB=Big(RiveStrB);
+}else{
+	var RiveStrA=Star1+"."+Star2;
+	var RiveStrB=Star3+"."+Star4;
+	RiveStrA=Big(RiveStrA);
+	RiveStrB=Big(RiveStrB);
+}
+	//alert("Rive 000 Star1= "+Star1);
+	//alert("Rive 000 Star2= "+Star2);
+	//alert("Rive 000 Oper= "+Oper);
+	//alert("Rive 000 Star3= "+Star3);
+	//alert("Rive 000 Star4= "+Star4);
+	
+
+	
+	
+	
+	
+	
+	//alert("RiveStrA= "+RiveStrA);
+	//alert("RiveStrB= "+RiveStrB);
+	
+	
+	
+	var NewDecimal = new Big(0);
+	//alert("NewDecimal big 111= "+NewDecimal); 
+	//alert("NewDecimal= "+NewDecimal);
+	
+	var x = new Big(0);
+	Big.DP = 2;
+	var y = x.plus(Number(RiveStrA));
+		x = x.plus(Number(RiveStrA)).plus(Number(RiveStrB));
+		
+		
+		if(Oper=="plus" || Oper=="and" || Oper=="συν" || Oper=="σύν" || Oper=="και"){
+		
+			//NewDecimal=Number(RiveStrA) + Number(RiveStrB); //old method
+			
+			NewDecimal= NewDecimal.plus(Number(RiveStrA)).plus(Number(RiveStrB));
+			if(Lang=="Eng"){
+				return "The result of "+ Star1 +"."+ Star2 +" plus "+Star3+"."+Star3+" is "+NewDecimal;
+			}
+			if(Lang=="Gre"){
+				
+				return "Το αποτέλεσμα του "+ Star1 +"."+ Star2 +" συν "+Star3+"."+Star3+" είναι "+NewDecimal;
+			
+			}
+			//alert("NewDecimal big 222 = "+NewDecimal);
+			}else if(Oper=="minus" || Oper=="πλήν" || Oper=="πλην" || Oper=="μιον"){
+				if(RiveStrA<RiveStrB){ //Sub the bigger from smaller AND aplly '-' sign correctly 
+					//NewDecimal=Number(RiveStrB) - Number(RiveStrA);
+					//NewDecimal="-"+NewDecimal;
+					//5.4 μιον 6.8
+					NewDecimal = NewDecimal.plus(Number(RiveStrB)).minus(Number(RiveStrA));
+					//alert("NewDecimal big 333 -111 = "+NewDecimal);
+					//return "-"+NewDecimal;
+					alert("Lang="+Lang);
+					if(Lang=="Eng"){
+						return "The result of "+ Star1 +"."+ Star2 +" minus "+Star3+"."+Star4+" is -"+NewDecimal;
+					}
+					if(Lang=="Gre"){
+						
+						return "Το αποτέλεσμα του "+ Star1 +"."+ Star2 +" πλήν "+Star3+"."+Star4+" είναι "+NewDecimal;
+					
+					}
+					
+				}else{
+					//NewDecimal=Number(RiveStrA) - Number(RiveStrB); //old method
+					NewDecimal = NewDecimal.plus(Number(RiveStrA)).minus(Number(RiveStrB));
+					//alert("NewDecimal big 333 -222 = "+NewDecimal);
+					if(Lang=="Eng"){
+						return "The result of "+ Star1 +"."+ Star2 +" minus "+Star3+"."+Star4+" is "+NewDecimal;
+					}
+					if(Lang=="Gre"){
+						
+						return "Το αποτέλεσμα του "+ Star1 +"."+ Star2 +" πλήν "+Star3+"."+Star4+" είναι "+NewDecimal;
+					
+					}
+				}
+				
+				}else if(Oper=="times" || Oper=="επί" || Oper=="επι" || Oper=="φορές το" || Oper=="φορες το" || Oper=="φορές" || Oper=="φορες"){
+				
+					// NewDecimal=Number(RiveStrA) * Number(RiveStrB); //old method
+					NewDecimal = NewDecimal.plus(Number(RiveStrA)).times(Number(RiveStrB));
+					//alert("NewDecimal big 444= "+NewDecimal);
+											if(Lang=="Eng"){
+							return "The result of "+ Star1 +"."+ Star2 +" times "+Star3+"."+Star4+" is "+NewDecimal;
+						}
+						if(Lang=="Gre"){
+							
+							return "Το αποτέλεσμα του "+ Star1 +"."+ Star2 +" φορές το "+Star3+"."+Star4+" είναι "+NewDecimal;
+						
+						}					
+					
+					}else if(Oper=="div" || Oper=="δια" || Oper=="διά" || Oper=="divide" || Oper=="divided by"){
+					
+						//NewDecimal=Number(RiveStrA) / Number(RiveStrB); //old method
+						
+						NewDecimal = NewDecimal.plus(Number(RiveStrA)).div(Number(RiveStrB));
+						if(Lang=="Eng"){
+							return "The result of "+ Star1 +"."+ Star2 +" divided by "+Star3+"."+Star4+" is "+NewDecimal;
+						}
+						if(Lang=="Gre"){
+							
+							return "Το αποτέλεσμα του "+ Star1 +"."+ Star2 +" δια "+Star3+"."+Star4+" είναι "+NewDecimal;
+						
+						}
+						//alert("NewDecimal big 555= "+NewDecimal);
+						}
+
+	
+	
+	
+	
+
+	//return NewDecimal;
+	
+	
+	
+< object
+

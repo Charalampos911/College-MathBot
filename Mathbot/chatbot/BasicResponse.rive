@@ -1,0 +1,53 @@
+//When the User ASKS THE bot! and the bot responds!
+//-Προσθεση
+//+ [*] (#) (plus|and) (#) [*] {weight=10}
+
+//-<set A1=<star1>>
+//^<set B1=<star3>>
+//^<add R1=<get A1>>
+//^<add R1=<get B1>>
+//^The 444 result of <star2> <star3> <star4> is <get R1> 
+//^<set R1=0>
+//-προσθεση 
+
+//-Αφαιρεση
+//+ [*] (#) (minus) (#) [*] {weight=10}
+
+//-<set A2=<star1>>
+//^<set B2=<star3>>
+//^<add R2=<get A2>>
+//^<sub R2=<get B2>>
+//^The 444 result of <star2> <star3> <star4> is <get R2>
+//^<set R2=0>
+//-αφαιρεση 
+
+//-Πολλαπλασιασμος
+//+ [*] (#) (times) (#) [*] {weight=10}
+
+//-<set A3=<star1>>
+//^<set B3=<star3>>
+//^<add R3=<get A3>>
+//^<mult R3=<get B3>>
+//^The 444 result of <star2> multiplied by <star4> is <get R3>
+//^<set R3=0>
+//-πολλαπλασιασμος
+
+
+//-Διαιρεση
+//+ [*] (#) (divide|div|divided by) (#) [*] {weight=10}
+
+//-<set A4=<star2>>
+//^<set B4=<star4>>
+//^<add R4=<get A4>>
+//^<div R4=<get B4>>
+//^The 444 result of <star2> divided by <star4> is <get R4> 
+//^<set R4=0>
+//-διαιρεση
+
+
+
+
+
+
+
+

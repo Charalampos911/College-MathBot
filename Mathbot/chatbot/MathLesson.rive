@@ -1,0 +1,589 @@
+//Ask the bot to provide with the "questions" *Greek
++ 788abc # plus # {weight=100}
+- Πες μου πόσο κάνει <star1> σύν <star2>     <set Oper=plus><set cor=0><set A5=<star1>><set B5=<star2>><add cor=<get A5>><add cor=<get B5>>
+- Ξέρεις πόσο κάνει <star1> σύν <star2>      <set Oper=plus><set cor=0><set A5=<star1>><set B5=<star2>><add cor=<get A5>><add cor=<get B5>>
+- θα ήθελα να σε δώ να κάνεις  <star1> σύν <star2>     <set Oper=plus><set cor=0><set A5=<star1>><set B5=<star2>><add cor=<get A5>><add cor=<get B5>>
+
++ 788abc # minus # {weight=100}
+- Πες μου πόσο κάνει <star1> πλήν <star2>     <set Oper=minus><set cor=0><set A5=<star1>><set B5=<star2>><add cor=<get A5>><sub cor=<get B5>>
+- Ξέρεις πόσο κάνει <star1> πλήν <star2>      <set Oper=minus><set cor=0><set A5=<star1>><set B5=<star2>><add cor=<get A5>><sub cor=<get B5>>
+- θα ήθελα να σε δώ να κάνεις  <star1> πλήν <star2>      <set Oper=minus><set cor=0><set A5=<star1>><set B5=<star2>><add cor=<get A5>><sub cor=<get B5>>
+
++ 788abc # multiplied by # {weight=100}
+- Πες μου πόσο κάνει <star1> επί <star2>     <set Oper=multy><set cor=0><set A5=<star1>><set B5=<star2>><add cor=<get A5>><mult cor=<get B5>>
+- Ξέρεις πόσο κάνει <star1> επί <star2>     <set Oper=multy><set cor=0><set A5=<star1>><set B5=<star2>><add cor=<get A5>><mult cor=<get B5>>
+- θα ήθελα να σε δώ να κάνεις  <star1> επί <star2>     <set Oper=multy><set cor=0><set A5=<star1>><set B5=<star2>><add cor=<get A5>><mult cor=<get B5>>
+
++ 788abc # divided by # {weight=100}
+- Πες μου πόσο κάνει <star1> διά <star2>      <set Oper=divy><set cor=0><set A5=<star1>><set B5=<star2>><add cor=<get A5>><div cor=<get B5>>
+- Ξέρεις πόσο κάνει <star1> διά <star2>  <set Oper=divy><set cor=0><set A5=<star1>><set B5=<star2>><add cor=<get A5>><div cor=<get B5>>
+- θα ήθελα να σε δώ να κάνεις  <star1> διά <star2>      <set Oper=divy><set cor=0><set A5=<star1>><set B5=<star2>><add cor=<get A5>><div cor=<get B5>>
+
+
+
+
+
+
+
+
+
+
+//Ask the bot to provide with the "questions"  *ENGLISH
++ 777abc # plus # {weight=100}
+- tell me how much is <star1> plus <star2>     <set Oper=plus><set cor=0><set A5=<star1>><set B5=<star2>><add cor=<get A5>><add cor=<get B5>>
+- do you know how much is <star1> plus <star2> <set Oper=plus><set cor=0><set A5=<star1>><set B5=<star2>><add cor=<get A5>><add cor=<get B5>>
+- do the math  <star1> plus <star2> for me     <set Oper=plus><set cor=0><set A5=<star1>><set B5=<star2>><add cor=<get A5>><add cor=<get B5>>
+
++ 777abc # minus # {weight=100}
+- tell me how much is <star1> minus <star2>     <set Oper=minus><set cor=0><set A5=<star1>><set B5=<star2>><add cor=<get A5>><sub cor=<get B5>>
+- do you know how much is <star1> minus <star2> <set Oper=minus><set cor=0><set A5=<star1>><set B5=<star2>><add cor=<get A5>><sub cor=<get B5>>
+- do the math  <star1> minus <star2> for me     <set Oper=minus><set cor=0><set A5=<star1>><set B5=<star2>><add cor=<get A5>><sub cor=<get B5>>
+
++ 777abc # multiplied by # {weight=100}
+- tell me how much is <star1> multiplied by <star2>     <set Oper=multy><set cor=0><set A5=<star1>><set B5=<star2>><add cor=<get A5>><mult cor=<get B5>>
+- do you know how much is <star1> multiplied by <star2> <set Oper=multy><set cor=0><set A5=<star1>><set B5=<star2>><add cor=<get A5>><mult cor=<get B5>>
+- do the math  <star1> multiplied by <star2> for me     <set Oper=multy><set cor=0><set A5=<star1>><set B5=<star2>><add cor=<get A5>><mult cor=<get B5>>
+
++ 777abc # divided by # {weight=100}
+- tell me how much is <star1> divided by <star2>      <set Oper=divy><set cor=0><set A5=<star1>><set B5=<star2>><add cor=<get A5>><div cor=<get B5>>
+- do you know how much is <star1> divided by <star2>  <set Oper=divy><set cor=0><set A5=<star1>><set B5=<star2>><add cor=<get A5>><div cor=<get B5>>
+- do the math  <star1> divided by <star2> for me      <set Oper=divy><set cor=0><set A5=<star1>><set B5=<star2>><add cor=<get A5>><div cor=<get B5>>
+
+
++ * # [*]
+- <set Neg=<get cor>> <call>Student_Answer_Calc <star2></call> // /cor is -2 STAR= 2
+
++ #
+- <set Neg=<get cor>> <call>Student_Answer_Calc <star></call> // /cor is -2 STAR= 2
+
++ * minus # [*]  {weight=5}
+- <set Neg=<get cor>> <call>Student_Answer_Calc <star2></call> // /cor is -2 STAR= 2
+
++ minus #  {weight=5}
+- <set Neg=<get cor>> <call>Student_Answer_Calc <star></call> // /cor is -2 STAR= 2
+
+
+
+
+//Catch and proccess the User Answer and deliver the appropriate response
+> object Student_Answer_Calc javascript
+
+	var COR = parseInt(args[0]);
+
+	//alert("User was not PROVIDED 111");
+	
+	var rand = Math.floor(Math.random() * 3);
+	//alert("1500="+COR);
+	console.log("COR pre= "+COR);
+	
+	//alert("RIVE myMess= "+$myMess);
+	
+	var regexA1rive = new RegExp(/([.])[0-9]+/, "ig");
+	var myMess=$myMess;
+	var myMessRive = String(myMess).match(regexA1rive);
+	
+
+		var user = rs.currentUser();
+		var Neg = rs.getUservar(user, 'Neg');
+		return Neg.then(function(result) { //mikro cor
+
+		//alert("User was not PROVIDED 222");
+if (result == "undefined" || FlagsUsed == 1){
+FlagsUsed=0;
+//alert("result was UNDEFINED");
+	if(Lang=="Gre"){
+		return "Καλημέρα και σε σένα!";
+		}
+	if(Lang=="Eng"){
+		return "Good morning to you too!";
+		}
+}			var NumA = rs.getUservar(user, 'A5');
+			return NumA.then(function(NumA) { //mikro cor
+
+			//alert("User was not PROVIDED 333");
+
+				var NumB = rs.getUservar(user, 'B5');
+				return NumB.then(function(NumB) { //mikro cor
+					var Oper = rs.getUservar(user, 'Oper');
+					return Oper.then(function(Oper) { //mikro cor
+		
+				//alert("User was not PROVIDED 444");
+		
+			// here you can use the result of promiseB
+			
+	if($myMess.length==1 && String(myMess).match(regexA1rive)){
+		var result_new= Number.parseFloat(result).toFixed(2);
+		var myMess_new= Number.parseFloat($myMess).toFixed(2);
+		//alert("it worked == "+myMessRive);
+		//alert("RIVE myMess.length= "+$myMess.length);
+		//alert("RIVE myMess_1= "+$myMess +" and COR=="+COR + " AND result= "+result);
+		//alert("RIVE myMess_2= "+myMessRive);
+		//alert("RIVE result_new= "+result_new);
+		//alert("RIVE myMess_new= "+myMess_new);
+		//alert("User was not PROVIDED 555");
+			if(myMess_new == result_new){ //Σωστο
+			
+			
+		//Αν ειναι Σωστο, αποθηκευσε το σκορ στην βαση δεδομενων
+				var ThisUser=$( "#HiddenPin" ).val();
+					if(ThisUser==""){
+						//alert("User was not PROVIDED");
+					}else{
+						//alert("Ηταν Σωστο 22 και θα αποθηκευτει το Σκορ! του χρήστη= "+ThisUser);
+						//Add the User score to the database!			
+					  $.ajax({                                      
+							url: 'PostScores.php',          
+							data: {Oper: Oper,User: ThisUser},			   
+							dataType: 'json',  	//data format 
+							beforeSend : function()    {           
+									//--007		
+				//alert("XaXa77 Oper="+Oper);									
+							},
+							success: function(data)   
+							{
+								//alert("Score recorded data="+data);
+								//LoadMisstakes(ThisUser);
+								LoadScores(ThisUser);	
+								//alert("User was not PROVIDED 666");		
+							}// end of success
+							
+						});//end of ajax
+					//Add the User score to the database!	
+							//alert("User was not PROVIDED 777");
+					//Save statistics
+					Statictics(ThisUser, "correct");
+					}
+			
+			
+			
+			if(Lang=="Eng"){
+					if (rand == 0) {
+						//alert("rand 111 Decimal");
+						return "correct, thats the right answer, it is "+myMess_new+" indeed";
+					} else if(rand == 1){
+						//alert("rand 222 Decimal");
+						return "thats right, its "+myMess_new;
+					}else if(rand == 2){
+						//alert("rand 333 Decimal");
+						return "Bravo, it is "+myMess_new;
+					}	
+				}
+			if(Lang=="Gre"){
+					if (rand == 0) {
+						//alert("rand 111 Decimal");
+						return "Σωστά, αυτή είναι η ορθή απάντηση, είναι "+myMess_new+" όντως";
+					} else if(rand == 1){
+						//alert("rand 222 Decimal");
+						return "αυτός είσαι, είναι "+myMess_new;
+					}else if(rand == 2){
+						//alert("rand 333 Decimal");
+						return "Εύγε, είναι "+myMess_new;
+					}
+			}
+			}
+
+			if(myMess_new != result_new){ //Λαθος
+			//alert("User was not PROVIDED 888");
+			if(ThisUser==""){
+				//alert("User was not PROVIDED");
+			}else{
+			//alert("ThisLesson --> ThisUser= "+ThisUser);
+			//Add the User Misstake to teh database!			
+				  $.ajax({                                      
+						url: 'PostUsermisstakes.php',          
+						data: {NumA: NumA, Oper: Oper, NumB: NumB, MissUser: ThisUser},			   
+						dataType: 'json',  	//data format 
+						beforeSend : function()    {           
+								//--007			
+						},
+						success: function(data)   
+						{
+							//alert("Misstake recorded");
+							LoadMisstakes(ThisUser);
+											
+						}// end of success
+						
+						});//end of ajax
+			//Add the User Misstake to teh database!			
+	//alert("User was not PROVIDED 999");
+			//Save statistics
+			Statictics(ThisUser, "wrong");		
+			}			
+			
+			
+			if(Lang=="Eng"){
+					if (rand == 0) {
+						//alert("rand 111 Decimal");
+						return "Wrong, the correct answer is "+result_new +" "+ CurrentUser.Nick;
+					} else if(rand == 1){
+						//alert("rand 222 Decimal");
+						return "Sorry "+CurrentUser.Nick+", its "+result_new+" actually";
+					}else if(rand == 2){
+						//alert("rand 333 Decimal");
+						return "You can do better "+CurrentUser.Nick+",unfortunately it is "+result_new;
+					}	
+				}
+			if(Lang=="Gre"){
+					if (rand == 0) {
+						//alert("rand 111 Decimal");
+						return "Λάθος, η σωστή απάντηση είναι "+result_new +" "+ CurrentUser.Nick;
+					} else if(rand == 1){
+						//alert("rand 222 Decimal");
+						return "Λυπάμαι "+CurrentUser.Nick+", το σωστό είναι "+result_new;
+					}else if(rand == 2){
+						//alert("rand 333 Decimal");
+						return "Προσπάθησε πάλι "+CurrentUser.Nick+",δυστυχώς είναι το "+result_new;
+					}	
+				}
+				
+			}
+		
+	}else{
+			
+			
+			//alert("User was not PROVIDED GGG-5656");
+			
+			//alert("COR="+COR);
+		if(result<0){ //Αρνητικο 
+			if(Math.abs(result) == COR){ //Σωστο
+			//alert("it is neggative");
+				//result=Math.abs(result);
+				//alert("rand="+rand);
+				
+				
+		//Αν ειναι Σωστο, αποθηκευσε το σκορ στην βαση δεδομενων
+				var ThisUser=$( "#HiddenPin" ).val();
+					if(ThisUser==""){
+						//alert("User was not PROVIDED G6-G6");
+					}else{
+						//alert("Ηταν Σωστο 22 και θα αποθηκευτει το Σκορ! του χρήστη= "+ThisUser);
+						//Add the User score to the database!			
+					  $.ajax({                                      
+							url: 'PostScores.php',          
+							data: {Oper: Oper,User: ThisUser},			   
+							dataType: 'json',  	//data format 
+							beforeSend : function()    {           
+									//--007		
+				//alert("Oper="+Oper);									
+							},
+							success: function(data)   
+							{
+								//alert("Score recorded data="+data);
+								//LoadMisstakes(ThisUser);
+								LoadScores(ThisUser);
+												
+							}// end of success
+							
+						});//end of ajax
+					//Add the User score to the database!
+					//alert("Load stats G6-G6");
+					//Save statistics
+					Statictics(ThisUser, "correct");
+					}
+			//alert("Aρνητικο  22 μετα το AJAX");
+				
+				
+			if(Lang=="Eng"){
+				if (rand == 0) {
+					//alert("rand 111");
+					return "correct, thats the right answer, it is "+result+" indeed";
+				} else if(rand == 1){
+					//alert("rand 222");
+					return "thats right, its "+result;
+				}else if(rand == 2){
+					//alert("rand 333");
+					return "Bravo, it is "+result;
+				}	
+			}
+			if(Lang=="Gre"){
+					if (rand == 0) {
+						//alert("rand 111 Decimal");
+						return "Σωστά, αυτή είναι η ορθή απάντηση, είναι "+result+" όντως";
+					} else if(rand == 1){
+						//alert("rand 222 Decimal");
+						return "αυτός είσαι, είναι "+result;
+					}else if(rand == 2){
+						//alert("rand 333 Decimal");
+						return "Εύγε, είναι "+result;
+					}
+			}
+	
+	
+	
+			}
+
+			if(Math.abs(result) != COR){ //Λαθος
+			
+			//alert("it is neggative 222 77");
+			
+			var ThisUser=$( "#HiddenPin" ).val();
+
+			//alert("current use PIN="+ThisUser );
+			//alert("current use NumA="+NumA );
+			//alert("current use NumB="+NumB ); 
+			//alert("current use Oper="+Oper );
+			
+			if(ThisUser==""){
+				//alert("User was not PROVIDED");
+			}else{
+			//alert("ThisLesson --> ThisUser= "+ThisUser);
+	//Add the User Misstake to teh database!			
+		  $.ajax({                                      
+				url: 'PostUsermisstakes.php',          
+				data: {NumA: NumA, Oper: Oper, NumB: NumB, MissUser: ThisUser},			   
+				dataType: 'json',  	//data format 
+				beforeSend : function()    {           
+						//--007			
+				},
+				success: function(data)   
+				{
+					//alert("Misstake recorded");
+					LoadMisstakes(ThisUser);
+									
+				}// end of success
+				
+				});//end of ajax
+	//Add the User Misstake to teh database!			
+					//Save statistics
+					Statictics(ThisUser, "wrong");
+			}
+			
+
+				//result=Math.abs(result);
+				//alert("rand="+rand);
+				
+			if(Lang=="Eng"){
+				if (rand == 0) {
+					//alert("rand 111");
+					return "Wrong, the correct answer is "+result +" "+ CurrentUser.Nick;
+				} else if(rand == 1){
+					//alert("rand 222");
+					return "Sorry "+CurrentUser.Nick+", its "+result+" actually";
+				}else if(rand == 2){
+					//alert("rand 333");
+					return "You can do better "+CurrentUser.Nick+",unfortunately it is "+result;
+				}
+			}
+			if(Lang=="Gre"){
+					if (rand == 0) {
+						//alert("rand 111 Decimal");
+						return "Λάθος, η σωστή απάντηση είναι "+result +" "+ CurrentUser.Nick;
+					} else if(rand == 1){
+						//alert("rand 222 Decimal");
+						return "Λυπάμαι "+CurrentUser.Nick+", το σωστό είναι "+result;
+					}else if(rand == 2){
+						//alert("rand 333 Decimal");
+						return "Προσπάθησε πάλι "+CurrentUser.Nick+",δυστυχώς είναι το "+result;
+					}	
+				}
+
+				
+				
+			}
+		}else { //Θετικό-Ακέραιο -PLUS- -MINUS- MULTI- -DIVY-
+		
+		
+		//console.log("AAA+++ result="+result);
+		
+		
+		if (Math.round(result * 100) == Math.round(COR * 100)){
+		//alert("77777777777777777777777777777777");
+		
+		}else{
+		
+		//alert("999999999999999999999999999999999");
+		}
+		
+		
+		var regExp = /^0[0-9].*$/;
+		
+		//Δεκαδικο
+		if(regExp.test(result.split('.').join(""))){ //Had ZEROES
+		
+		console.log("Had ZEROES -> result= "+result);
+		var NewResult=result.split('.').join("").substring(0, 2);
+		//result="0."+NewResult;
+		//result=Number(result).toFixed(2).toString();
+		}else{ //Had no zeroes at all
+		
+		var NewResult=result.split('.').join("").replace(/\b0+/g, '').substring(0, 4);
+		console.log("NewResult XORIS="+NewResult);
+		
+		
+		}
+		
+
+		
+
+		
+		
+		
+		var LastTwoDec= NewResult.slice(-2);
+
+		
+		console.log("result= "+result); //edw
+		console.log("NewResult.substring(0, 2)= "+NewResult.substring(0, 2)); //edw
+		console.log("LastTwoDec= "+LastTwoDec); //edw
+		console.log("COR meta= "+COR);
+		
+		
+			if(Math.abs(NewResult) != COR){ //Λαθος
+			//alert("it is possitive 222 77");
+			
+			
+			
+			var ThisUser=$( "#HiddenPin" ).val();
+			
+			
+			
+			
+			//alert("current use PIN="+ThisUser );
+			//alert("current use NumA="+NumA );
+			//alert("current use NumB="+NumB ); 
+			//alert("current use Oper="+Oper );
+			
+			
+			if(ThisUser==""){
+				//alert("User was not PROVIDED  re-re");
+			}else{
+			//alert("ThisLesson --> ThisUser= "+ThisUser);
+			
+		//Add the User Misstake to teh database!			
+			  $.ajax({                                      
+					url: 'PostUsermisstakes.php',          
+					data: {NumA: NumA, Oper: Oper, NumB: NumB, MissUser: ThisUser},			   
+					dataType: 'json',  	//data format 
+					beforeSend : function()    {           
+							//--007			
+					},
+					success: function(data)   
+					{
+						//alert("Misstake recorded");
+						LoadMisstakes(ThisUser);
+					}// end of success
+					
+					});//end of ajax
+		//Add the User Misstake to the database!
+					//Save statistics
+					Statictics(ThisUser, "wrong");
+			}
+				//result=Math.abs(result);
+				//alert("rand="+rand);
+			if(Lang=="Eng"){
+				if (rand == 0) {
+					//alert("rand 111");
+					return "Wrong, the correct answer "+Number(result).toFixed(2)+" "+ CurrentUser.Nick;
+				} else if(rand == 1){
+					//alert("rand 222");
+					return "Sorry "+CurrentUser.Nick+", its "+Number(result).toFixed(2)+" actually";
+				}else if(rand == 2){
+					//alert("rand 333");
+					return "You can do better "+CurrentUser.Nick+",unfortunately it is "+Number(result).toFixed(2);
+				}	
+			}
+			if(Lang=="Gre"){
+					if (rand == 0) {
+						//alert("rand 111 Decimal");
+						return "Λάθος, η σωστή απάντηση είναι "+Number(result).toFixed(2)+" "+ CurrentUser.Nick;
+					} else if(rand == 1){
+						//alert("rand 222 Decimal");
+						return "Λυπάμαι "+CurrentUser.Nick+", το σωστό είναι "+Number(result).toFixed(2);
+					}else if(rand == 2){
+						//alert("rand 333 Decimal");
+						return "Προσπάθησε πάλι "+CurrentUser.Nick+",δυστυχώς είναι το "+Number(result).toFixed(2);
+					}	
+				}
+				
+				
+				
+			}else{ //Σωστο
+			//alert("it is possitive 333");
+				//result=Math.abs(result);
+				
+				//alert("rand="+rand);
+				
+				
+				
+		//Αν ειναι Σωστο, αποθηκευσε το σκορ στην βαση δεδομενων
+				var ThisUser=$( "#HiddenPin" ).val();
+					if(ThisUser==""){
+						//alert("User was not PROVIDED Qe-Qe");
+					}else{
+						//alert("Ηταν Σωστο 11 και θα αποθηκευτει το Σκορ! του χρήστη= "+ThisUser);
+						//Add the User score to the database!			
+					  $.ajax({                                      
+							url: 'PostScores.php',          
+							data: {Oper: Oper, User: ThisUser},			   
+							dataType: 'json',  	//data format 
+							beforeSend : function()    {           
+									//--007		
+								//alert(" Before send 11 Oper="+Oper+" ThisUser="+ThisUser );	
+								//alert("Oper="+Oper);									
+							},
+							success: function(data)   
+							{
+								//alert("Score recorded data="+data);
+								//LoadMisstakes(ThisUser);
+								LoadScores(ThisUser);
+							}// end of success
+							
+						}).always(function(jqXHR, textStatus) {
+							if (textStatus != "success") {
+								//alert("Error: " + jqXHR.statusText);
+							}
+						});
+					//Add the User score to the database!				
+				//alert("Θετικό-Ακέραιο 11 μετα το AJAX");
+
+
+					//Save statistics
+					Statictics(ThisUser, "correct");
+				
+					}
+			if(Lang=="Eng"){
+				if (rand == 0) {
+					//alert("rand 111");
+					return "correct, thats the right answer, it is "+Number(result).toFixed(2)+" indeed";
+				} else if(rand == 1){
+					//alert("rand 222");
+					return "thats right, its "+Number(result).toFixed(2);
+				}else if(rand == 2){
+					//alert("rand 333");
+					return "Bravo, it is "+Number(result).toFixed(2);
+				}
+			}
+			if(Lang=="Gre"){
+					if (rand == 0) {
+						//alert("rand 111 Decimal");
+						return "Σωστά, αυτή είναι η ορθή απάντηση, είναι "+Number(result).toFixed(2)+" όντως";
+					} else if(rand == 1){
+						//alert("rand 222 Decimal");
+						return "αυτός είσαι, είναι "+Number(result).toFixed(2);
+					}else if(rand == 2){
+						//alert("rand 333 Decimal");
+						return "Εύγε, είναι "+Number(result).toFixed(2);
+					}
+			}
+
+
+				
+			
+			}
+		
+		
+		
+		}	
+
+			
+		}	
+				});
+			});
+		});
+	});
+	
+< object
+
+
+
+
+

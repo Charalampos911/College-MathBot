@@ -1,0 +1,173 @@
+! version = 2.0
+
+! local concat = newline
+
+
+//my pin is 12345
++ [*] my pin is * [*] {weight=100}
+
+-<set pin=<star1>>
+^<call>LogInUser</call>
+
+
+> object LogInUser javascript
+	var user = rs.currentUser();
+    var pin = rs.getUservar(user, 'pin');
+	console.log("pin= "+pin);
+	//alert("pin= "+pin);
+	return pin.then(function(result) { //Promise resolves
+			console.log("pin pre= "+result);
+			sugg.t2=result;
+			CurrentUser.Pin = result;
+			LogIn();
+			if(Lang=="Eng"){
+				return "Oh, now I remember you, lets go!";
+			}
+			if(Lang=="Gre"){
+				return "Έλα, τώρα σε θυμήθηκα, πάμε!";
+			}
+
+		});
+< object
+
+// new staff
+
+// good night
++ [*] good night [*] {weight=100}
+
+-<call>LogOutUser</call> 
+> object LogOutUser javascript
+	
+	window.CntrMath01=1;
+	
+	$( "#RateMe" ).hide();
+	$( "#NSbtn" ).hide()
+	Rated=0;
+	 //Show
+		$( "#LogIn" ).show();
+		$( "#Reg" ).show();
+		$( "#LogIn" ).css("visibility","visible");
+		$( "#Reg" ).css("visibility","visible");
+	 //Hide
+		$( "#LogOut" ).hide();
+		$( "#LogOut" ).css("visibility","hidden");	
+	 //User Nickname label
+		$( "#lbl_UserLogged" ).text("Guest");
+	 //Update Session Object 
+		CurrentUser.Nick="Guest";
+		CurrentUser.Pin="";	
+		$( "#HiddenPin" ).val("");
+		$( "#UserMisstakesCont" ).html("");
+		$( "#UserScoresCont" ).html("");
+			if(Lang=="Eng"){
+				return "Okey, bye!";
+			}
+			if(Lang=="Gre"){
+				return "Τα λέμε!";
+			}
+< object
+
+
+// my name is bob
++ [*] my name is * [*] {weight=100}
+
+-<set Uname=<star1>> <call>UserNamesHimSelf</call>
+> object UserNamesHimSelf javascript
+ var user = rs.currentUser();
+ var Uname = rs.getUservar(user, 'Uname');
+ return Uname.then(function(result) { //Promise resolves
+ 
+			CurrentUser.Nick=""+result;
+			
+			if(Lang=="Eng"){
+				return "Hi "+result+", shall we do math?";
+			}
+			if(Lang=="Gre"){
+				return "Γειά σου "+result+", να κάνουμε μαθηματικά?";
+			}
+ });
+< object
+
++ [*] my name is [*] {weight=10}
+-<call>UserNamesHimSelfGreek</call>
+> object UserNamesHimSelfGreek javascript
+//alert("CurrentUser.Nick="+ CurrentUser.Nick);
+			if(Lang=="Eng"){
+				return "Hi "+CurrentUser.Nick+", shall we do math?";
+			}
+			
+			
+			if(Lang=="Gre"){
+				return "Γειά σου "+CurrentUser.Nick+", να κάνουμε μαθηματικά?";
+			}
+< object
+
+ // hello
++ [*] (hello|hi) [mathew] [*] {weight=100}
+-<call>BasicGreets</call>
+
+> object BasicGreets javascript
+
+			if(Lang=="Eng"){
+				return "Hello, are you ready?";
+			}
+			if(Lang=="Gre"){
+				return "Γειά σου, είσαι έτοιμος?";
+			}
+			
+< object
+// begin again
++ [*] (restart our lesson|begin again) [*] {weight=100}
+
+
+-<call>RestartLesson</call>
+
+
+> object RestartLesson javascript
+
+	RestartLesson();
+	if(CurrentUser.Nick=="" || CurrentUser.Nick=="Guest"){
+		if(Lang=="Eng"){
+			return "You need to log-in before we can start over";
+		}
+		if(Lang=="Gre"){
+			return "Πρέπει να κάνεις είσοδο στον λογαριασμό σου πρώτα!";
+		}
+	}else{
+		if(Lang=="Eng"){		
+			return "One second please "+CurrentUser.Nick+", Ok ready, lets go!";
+		}		
+		if(Lang=="Gre"){		
+			return "ένα λεπτό "+CurrentUser.Nick+", έντάξη πάμε!";
+		}		
+	}		
+
+< object
+
+
+// Please explain how much is 5 plus 6
++ [*] explain [to me] how much is # (plus|minus|multiplied by|divided by) # [*] {weight=100}
+
+
+-<call>Explain <star1> <star2> <star3></call>
+
+
+> object Explain javascript
+	var StrA = parseInt(args[0]);
+	var Oper = String(args[1]) 
+	var StrB = parseInt(args[2]);
+
+	SetMissVals(StrA,Oper,StrB);
+	if(Lang=="Eng"){		
+		return "Its better to show you, check the whiteBoard API down bellow! Feel free to use and experiment with it!";
+	}		
+	if(Lang=="Gre"){		
+		return "Καλύτερα να στο δείξω, δες το whiteBoard API όπου φόρτωσα για εσένα τις τιμές!";
+	}		
+
+< object
+
+
+
+
+

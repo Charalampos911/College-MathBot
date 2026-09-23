@@ -1,0 +1,298 @@
+@media  screen and (min-width: 1500px){ /* and (max-width: 1920px) {*/
+.button {
+  border: none;
+  color: white;
+  padding: .1px .2px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: .4px .2px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size:250%;
+  font-weight:bold;
+  width:220px;
+  height:60px;
+}
+.B01{
+	width:100px;
+	padding-left: 25px;
+	margin-top: 10px;
+}
+#B9{
+	width:200px !important;
+}
+
+	#UI{
+		background-color:#b0cbf7;
+		height:120px;
+		width:1500px;
+		margin-bottom:10px;
+		font-size: 11pt;
+	}
+	#BEng{
+		background-image: url("http://thesis.cs.ihu.gr/charzerv/Mathbot/chatbot/ico/eng.png");
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+	}
+	#BGre{
+		background-image: url("http://thesis.cs.ihu.gr/charzerv/Mathbot/chatbot/ico/greece.png");
+		background-repeat: no-repeat;
+		background-size: cover;		
+		
+	}
+	#UserMisstakesCont{
+		
+		width:30%;
+		position:absolute;
+		overflow-x: hidden;
+		overflow-y: auto;
+		height:150px;
+		
+	}
+	#UserScoresCont{
+		
+		width:30%;
+		position:absolute;
+		left:35%;
+		overflow-x: hidden;
+		overflow-y: auto;
+		height:150px;
+		
+	}
+	.ScoresBox{
+		
+	   font-size:25px;
+		font-weight:600;
+		color:#574f4f;
+		
+	}
+	.ScoresBox span{
+		
+	   font-size:30px;
+	   font-weight:800;
+	   color:#741d1d;
+		
+	}
+	.MisTBox,.ItemOper{
+		
+		font-size:25px;
+		
+	}
+	.MisTBox:nth-child(odd) {
+		
+		background-color:#a0c1f8;
+		
+	}
+	.MisTBox:nth-child(even){
+		
+		
+		background-color:#9fbae9;
+		
+	}
+	.MisTBox span{
+		font-size:30px;
+		
+		
+	}
+	.MissSelected{
+		
+		background-color:#6cb8d5 !important;
+		
+	}
+	#textA{
+		background-color:#ccddf8;
+		height:500px;
+		width:1500px;
+		position:relative;
+		margin-bottom:10px;
+	}
+	
+	
+	#User{
+		background-color:#b0cbf7;
+		height:150px;
+		width:1500px;
+	}
+	
+	#main{
+		position:relative;
+		top:10px;
+		left:150px;
+		width:1500px;
+		
+	}
+	#voiceInput,#Synth{
+		position:relative;
+		top:15px;
+		
+		background-repeat: no-repeat;
+		background-size: 80% 80%;
+
+		background-position: center;
+		background-color: #00ccff;
+		width:40px;
+		display: inline-block;
+		height: 40px;
+		
+	}
+	#voiceInput{
+		background-image: url("http://thesis.cs.ihu.gr/charzerv/Mathbot/chatbot/ico/muted_mic.png");
+	}
+	#Synth{
+		background-image: url("http://thesis.cs.ihu.gr/charzerv/Mathbot/chatbot/ico/Speech_Muted.png");
+	}
+	.VoiceActive{
+		background-color: #00ff99 !important;
+		background-image: url("http://thesis.cs.ihu.gr/charzerv/Mathbot/chatbot/ico/mic.png") !important;
+		
+	}
+	.SynthActive{
+		background-color: #00ff99 !important;
+		background-image: url("http://thesis.cs.ihu.gr/charzerv/Mathbot/chatbot/ico/Speech.png") !important;
+		
+	}
+	.actions {
+	  position: absolute;
+	  bottom: 0;
+	  display: block;
+	  width: 90%;
+	 margin-bottom:5px;
+	}
+	.actions input{
+	  height: 40px;
+	  display: inline-block;
+	  /*display: block;*/
+	  width: 90%;
+	  outline: 0;
+	  border-top: 0;
+	  border-left: 0;
+	  border-right: 0;
+	   font-size:30px;
+	   font-weight:bold;
+	}
+	.format{
+	  border: .2px solid #99a9c2;
+	  padding: 15px;
+	  border-radius: 10px;
+	  margin-bottom:.75px;
+		
+		
+	}
+	#User_cont{
+		position:relative;
+		width:100%;
+		height:100%;
+		
+		
+	}
+	#UI_cont{
+		position:relative;
+		top:-10px;
+		left:0px;
+	}
+	.Rates{	
+		 overflow: hidden; /* add this to contain floated children */
+	}
+	.Rates label{
+	   font-size:30px;
+	   font-weight:600;
+		float:left; /* add this */
+		
+	}
+	.Rates div{
+		position:relative;
+		top:0px;
+		left:0px;
+		width:30%;
+		float:right; /* add this */
+		padding-top:5px;
+	}
+	#RateMe{
+		background-color:#b9cbe9;
+		
+		
+	}
+	.Rates:nth-child(odd){
+		background-color:#9bbcf6;
+		
+		
+	}
+	.Rates:nth-child(even){
+		background-color:#94b1e4;
+		
+		
+	}
+	.Rates:hover{
+		background-color:#d4e2f9;
+		
+		
+	}
+.checked {
+  color: orange;
+
+}
+.Thanks{
+	
+	   font-size:50px;
+	   font-weight:900;
+	
+	
+}
+	.fa-star:before {
+
+		font-size:150%;
+		
+		
+	}
+	
+* {
+  font-family: Courier;
+  /*font-size: 11pt;*/
+  
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+  
+}
+
+.chat {
+  width: 100%;
+  height: 95%;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+
+
+
+
+.messages div {
+  max-width: 60%;
+  display: block;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 7px;
+}
+
+.messages .bot {
+  text-align: left;
+  margin-right: auto;
+  background: lightblue;
+  font-size: 30pt;
+}
+
+.messages .self {
+  text-align: right;
+  margin-left: auto;
+  background: #DDD;
+  font-size: 30pt;
+}
+	
+	
+} /* 1280px */

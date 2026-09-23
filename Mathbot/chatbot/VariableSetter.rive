@@ -1,0 +1,392 @@
+! version = 2.0
+
+! local concat = newline
+
+
+//User setter variable: Combination
+
+//-->> do plus of the number five
+//do hard and multiply the number three
++ [*] do (plus|minus|multiplication|multiply|divide|division|random operator|any operator) of the number (one|two|three|four|five|six|seven|eight|nine|1|2|3|4|5|6|7|8|9|all ) [*] {weight=100}
+
+-<set Oper=<star1>>
+^<set Number=<star2>>
+^<call>UpdateOper</call> <call>Midium</call> 
+^<call>UpdateNumber</call>
+
+//-->>να κάνουμε πρόσθεση του νούμερου πέντε
+//+ [*] να κάνουμε (πρόσθεση|πρόσθεση|πολλαπλασιασμό|διαίρεση|τυχαίο) του νούμερου (ένα|δύο|τρία|τέσσερα|πέντε|έξι|εφτά|οκτώ|εννιά|όλα) [*] {weight=100}
+
+//-Combination
+
+//User setter variable: Dificulty
+
+> object UpdateDify javascript
+	var user = rs.currentUser();
+    var Dify = rs.getUservar(user, 'Dify');
+	console.log("Dify= "+Dify);
+	
+	return Dify.then(function(result) { //Promise resolves
+	
+	
+	
+			console.log("Dify pre= "+result);
+			console.log("result pre2= "+result);
+		if(result=="easy" || result=="εύκολο"){
+				$( "#B2" ).hide();
+				$( "#B2" ).css("visibility","hidden");
+				$( "#B1" ).show();
+				$( "#B1" ).css("visibility","visible");
+				sessionStorage.setItem("Dify", "easy"); //Dificulty
+				console.log("result== "+result);
+				
+				if(Lang=="Eng"){
+					return "Okey, easy questions now!";
+				}
+				if(Lang=="Gre"){
+					return "Εντάξη, θα σου κάνω έυκολες ερωτήσεις απο τώρα!";
+				}
+			}
+		if(result=="hard" || result=="δύσκολο"){
+				$( "#B1" ).hide();
+				$( "#B1" ).css("visibility","hidden");
+				$( "#B2" ).show();
+				$( "#B2" ).css("visibility","visible");
+				sessionStorage.setItem("Dify", "hard"); //Dificulty
+				console.log("result== "+result);
+					if(Lang=="Eng"){
+						return "Okey, let me ask you some hard questions then!";
+					}
+				if(Lang=="Gre"){
+					return "Εντάξη, θα σου κάνω δύσκολες ερωτήσεις απο τώρα!";
+				}
+			}
+			return "Dify="+Dify;
+		});
+< object
+
+
+
+
+
++ [*] do [some] (hard|easy) [*] {weight=10}
+
+-<set Dify=<star>>
+^<call>UpdateDify</call>
+
+//-> κάνε δύσκολο
++ [*] κάνε [(μερικές|μερικές|λιγες|λίγες)](δύσκολο|εύκολο) [*] {weight=10}
+
+-<set Dify=<star>>
+^<call>UpdateDify</call>
+
+//-Dificulty
+
+//User setter variable: Operator
+
++ [*] do (plus|minus|multiplication|multiply|divide|division|(random operator)|(any operator)) [*] {weight=10}
+
+-<set Oper=<star1>>
+^<call>UpdateOper</call>
+
+> object Midium javascript
+ if(Lang=="Eng"){
+	return "and";
+}
+ if(Lang=="Gre"){
+	return "και";
+}
+< object
+
+> object UpdateOper javascript
+	var user = rs.currentUser();
+	
+    var Oper = rs.getUservar(user, 'Oper');
+
+		return Oper.then(function(result) { //Promise resolves
+			console.log("result pre= "+result);
+			
+		//alert("result(Oper)= "+result);
+		
+		if(result=="plus" || result=="πρόσθεση"){
+				 $( ".B0" ).css("background-color"," #6fb3ca");
+				 
+				 $( ".B0" ).css("color","white");
+				 
+				  $( "#B3" ).css("background-color","rgb(47, 110, 132)");
+				 
+				 var ThisValue=$("#B3").attr("value");
+				 ThisValue=ThisValue.substr(0,ThisValue.indexOf(' '));
+					sessionStorage.setItem("Opera", ThisValue); //Operator
+					console.log("Opera="+sessionStorage.getItem("Opera"));
+					if(Lang=="Eng"){
+						return "Lets do addition then";
+					}
+					if(Lang=="Gre"){
+						return "Πάμε να κάνουμε πρόσθεση";
+					}
+					
+			}
+		if(result=="minus" || result=="αφαίρεση"){
+				 $( ".B0" ).css("background-color"," #6fb3ca");
+				 
+				 $( ".B0" ).css("color","white");
+				 
+				  $( "#B4" ).css("background-color","rgb(47, 110, 132)");
+				 
+				 var ThisValue=$("#B4").attr("value");
+				 ThisValue=ThisValue.substr(0,ThisValue.indexOf(' '));
+					sessionStorage.setItem("Opera", ThisValue); //Operator
+					console.log("Opera="+sessionStorage.getItem("Opera"));
+					if(Lang=="Eng"){
+						return "Lets do subtraction then";
+					}
+					if(Lang=="Gre"){
+						return "Τώρα αφαίρεση";
+					}
+			}
+		if(result=="multiplication" || result=="multiply" || result=="πολλαπλασιασμό"){
+				 $( ".B0" ).css("background-color"," #6fb3ca");
+				 
+				 $( ".B0" ).css("color","white");
+				 
+				  $( "#B5" ).css("background-color","rgb(47, 110, 132)");
+				 
+				 var ThisValue=$("#B5").attr("value");
+				 ThisValue=ThisValue.substr(0,ThisValue.indexOf(' '));
+					sessionStorage.setItem("Opera", ThisValue); //Operator
+					console.log("Opera="+sessionStorage.getItem("Opera"));
+					if(Lang=="Eng"){
+						return "Lets do multiplication then";
+					}
+					if(Lang=="Gre"){
+						return "Οκ, πάμε να κάνουμε πολλαπλασιασμό";
+					}
+					
+			}
+		if(result=="divide" || result=="division" || result=="διαίρεση"){
+				 $( ".B0" ).css("background-color"," #6fb3ca");
+				 
+				 $( ".B0" ).css("color","white");
+				 
+				  $( "#B6" ).css("background-color","rgb(47, 110, 132)");
+				 
+				 var ThisValue=$("#B5").attr("value");
+				 ThisValue=ThisValue.substr(0,ThisValue.indexOf(' '));
+					sessionStorage.setItem("Opera", ThisValue); //Operator
+					console.log("Opera="+sessionStorage.getItem("Opera"));
+					if(Lang=="Eng"){
+						return "Lets do division then";
+					}
+					if(Lang=="Gre"){
+						return "Να κάνουμε διαίρεση λοιπόν";
+					}
+			}
+		if(result=="random operator" || result=="any operator" || result=="τυχαίο τελεστή"){
+				 $( ".B0" ).css("background-color"," #6fb3ca");
+				 
+				 $( ".B0" ).css("color","white");
+				 
+				  $( "#B9" ).css("background-color","rgb(47, 110, 132)");
+				 
+				 var ThisValue=$("#B9").attr("value");
+				 ThisValue=ThisValue.substr(0,ThisValue.indexOf(' '));
+					sessionStorage.setItem("Opera", ThisValue); //Operator
+					console.log("Opera="+sessionStorage.getItem("Opera"));
+					if(Lang=="Eng"){
+						return "Any operator I like? fine...!";
+					}
+					if(Lang=="Gre"){
+						return "Ότι τελεστή θέλω εγώ? Okey!";
+					}
+			}
+			
+			return "result="+result;
+		});
+	
+< object
+
+//-Operator
+
+//User setter variable: Numbers
+
++ [*] (do|of)[ the] number (one|two|three|four|five|six|seven|eight|nine|1|2|3|4|5|6|7|8|9) [*] {weight=10}
+
+-<set Number=<star2>>
+^<call>UpdateNumber</call>
+
+
+
+
+> object UpdateNumber javascript
+	var user = rs.currentUser();
+    var VNumber = rs.getUservar(user, 'Number');
+
+		console.log("VNumber= "+VNumber);
+		return VNumber.then(function(result) { //Promise resolves
+			console.log("result pre= "+result);
+			
+			
+		//alert("result(Number)= "+result);
+		
+		
+		if(result=="one" || result=="1"){
+				$( ".B3" ).css("background-color"," #8194e8");
+				$("#B10").css("background-color","rgb(212, 107, 251)");
+		 
+				var ThisValue=$("#B10").attr("value");
+				ThisValue=ThisValue.substr(0,ThisValue.indexOf(' '));
+					sessionStorage.setItem("Number", ThisValue); //Operator
+					console.log("Number="+sessionStorage.getItem("Number"));
+					if(Lang=="Eng"){
+						return "lets practice the number one!";
+					}
+					if(Lang=="Gre"){
+						return "πάμε να κάνουμε τον αριθμό ένα!";
+					}
+			}
+		if(result=="two" || result=="2"){
+				$( ".B3" ).css("background-color"," #8194e8");
+				$("#B11").css("background-color","rgb(212, 107, 251)");
+		 
+				var ThisValue=$("#B11").attr("value");
+				ThisValue=ThisValue.substr(0,ThisValue.indexOf(' '));
+					sessionStorage.setItem("Number", ThisValue); //Operator
+					console.log("Number="+sessionStorage.getItem("Number"));
+					
+					if(Lang=="Eng"){
+						return "lets practice the number two!";
+					}
+					if(Lang=="Gre"){
+						return "πάμε να κάνουμε τον αριθμό δύο!";
+					}	
+			}
+		if(result=="three" || result=="3"){
+				$( ".B3" ).css("background-color"," #8194e8");
+				$("#B12").css("background-color","rgb(212, 107, 251)");
+		 
+				var ThisValue=$("#B12").attr("value");
+				ThisValue=ThisValue.substr(0,ThisValue.indexOf(' '));
+					sessionStorage.setItem("Number", ThisValue); //Operator
+					console.log("Number="+sessionStorage.getItem("Number"));
+					if(Lang=="Eng"){
+						return "lets practice the number three!";
+					}
+					if(Lang=="Gre"){
+						return "πάμε να κάνουμε τον αριθμό τρία!";
+					}
+			}
+		if(result=="four" || result=="4"){
+				$( ".B3" ).css("background-color"," #8194e8");
+				$("#B13").css("background-color","rgb(212, 107, 251)");
+		 
+				var ThisValue=$("#B13").attr("value");
+				ThisValue=ThisValue.substr(0,ThisValue.indexOf(' '));
+					sessionStorage.setItem("Number", ThisValue); //Operator
+					console.log("Number="+sessionStorage.getItem("Number"));
+					if(Lang=="Eng"){
+						return "lets practice the number four!";
+					}
+					if(Lang=="Gre"){
+						return "πάμε να κάνουμε τον αριθμό τέσσερα!";
+					}
+			}
+		if(result=="five" || result=="5"){
+				$( ".B3" ).css("background-color"," #8194e8");
+				$("#B14").css("background-color","rgb(212, 107, 251)");
+		 
+				var ThisValue=$("#B14").attr("value");
+				ThisValue=ThisValue.substr(0,ThisValue.indexOf(' '));
+					sessionStorage.setItem("Number", ThisValue); //Operator
+					console.log("Number="+sessionStorage.getItem("Number"));
+					if(Lang=="Eng"){
+						return "lets practice the number five!";
+					}
+					if(Lang=="Gre"){
+						return "πάμε να κάνουμε τον αριθμό πέντε!";
+					}
+			}
+		if(result=="six" || result=="6"){
+				$( ".B3" ).css("background-color"," #8194e8");
+				$("#B15").css("background-color","rgb(212, 107, 251)");
+		 
+				var ThisValue=$("#B15").attr("value");
+				ThisValue=ThisValue.substr(0,ThisValue.indexOf(' '));
+					sessionStorage.setItem("Number", ThisValue); //Operator
+					console.log("Number="+sessionStorage.getItem("Number"));
+					if(Lang=="Eng"){
+						return "lets practice the number six!";
+					}
+					if(Lang=="Gre"){
+						return "πάμε να κάνουμε τον αριθμό έξι!";
+					}
+			}
+		if(result=="seven" || result=="7"){
+				$( ".B3" ).css("background-color"," #8194e8");
+				$("#B16").css("background-color","rgb(212, 107, 251)");
+		 
+				var ThisValue=$("#B16").attr("value");
+				ThisValue=ThisValue.substr(0,ThisValue.indexOf(' '));
+					sessionStorage.setItem("Number", ThisValue); //Operator
+					console.log("Number="+sessionStorage.getItem("Number"));
+					if(Lang=="Eng"){
+						return "lets practice the number seven!";
+					}
+					if(Lang=="Gre"){
+						return "πάμε να κάνουμε τον αριθμό εφτά!";
+					}
+			}
+		if(result=="eight" || result=="8"){
+				$( ".B3" ).css("background-color"," #8194e8");
+				$("#B17").css("background-color","rgb(212, 107, 251)");
+		 
+				var ThisValue=$("#B17").attr("value");
+				ThisValue=ThisValue.substr(0,ThisValue.indexOf(' '));
+					sessionStorage.setItem("Number", ThisValue); //Operator
+					console.log("Number="+sessionStorage.getItem("Number"));
+					if(Lang=="Eng"){
+						return "lets practice the number eight!";
+					}
+					if(Lang=="Gre"){
+						return "πάμε να κάνουμε τον αριθμό οκτώ!";
+					}
+			}
+		if(result=="nine" || result=="9"){
+				$( ".B3" ).css("background-color"," #8194e8");
+				$("#B18").css("background-color","rgb(212, 107, 251)");
+		 
+				var ThisValue=$("#B18").attr("value");
+				ThisValue=ThisValue.substr(0,ThisValue.indexOf(' '));
+					sessionStorage.setItem("Number", ThisValue); //Operator
+					console.log("Number="+sessionStorage.getItem("Number"));
+					if(Lang=="Eng"){
+						return "lets practice the number nine!";
+					}
+					if(Lang=="Gre"){
+						return "πάμε να κάνουμε τον αριθμό εννιά!";
+					}
+			}
+		if(result=="all" || result=="όλα" || result=="any"){
+				$( ".B3" ).css("background-color"," #8194e8");
+				$("#B19").css("background-color","rgb(212, 107, 251)");
+		 
+				var ThisValue=$("#B19").attr("value");
+				ThisValue=ThisValue.substr(0,ThisValue.indexOf(' '));
+					sessionStorage.setItem("Number", ThisValue); //Operator
+					console.log("Number="+sessionStorage.getItem("Number"));
+					if(Lang=="Eng"){
+						return "lets practice any number I want!";
+					}
+					if(Lang=="Gre"){
+						return "πάμε να κάνουμε όποιον αριθμό θέλω εγώ!";
+					}
+			}
+			return "thats it!"+result;
+		});
+< object
+
+//-Numbers
+
+
+
+

@@ -1,0 +1,289 @@
+@media screen and (max-width: 1500px) { /*From Ipad pro to HD pc*/
+	#root_cont{
+		background-color:#b9cbe9;
+		width:970px;
+		margin:20px;
+		margin-top:20px;
+		margin-left:10px;
+		min-height:550px;
+		overflow-x: hidden;
+		overflow-y: auto;
+		
+	}
+#mainDiv_A2{
+	
+	
+}
+#mainDiv_B2{
+	
+	
+}	
+	
+	#input_cont{
+		
+		background-color:#b9cbe9;
+		width:970px;
+		height:auto;
+		margin:20px;
+		margin-left:10px;
+		
+	}
+	#NumberA,#NumberB,#input_cont label,#input_cont #oper , #btn_Start{
+		font-size:180%;
+		margin:10px;
+		
+		
+	}
+	#PlusMinusSteps input,#MultiplySteps input{
+		font-size:100%;
+		font-weight:bold;
+		width:60px;
+		height:60px;
+		text-align:center;
+		padding:0px;
+		
+		
+		
+	}
+	.box{
+		border:1px solid black;
+		background-color:rgba(0,0,255,0.1);
+		
+		
+	}
+	.boxNow{
+		
+		background-color:rgba(0,0,255,0.3);
+		
+	}
+#WhiteB{
+	
+	padding:5px;
+	background-color:#ccddf8;
+	width:990px;
+}
+	
+	
+#root_cont{
+	font-size:200%;
+	position:relative;
+	font-family:Optima;
+}
+#main_A , #main_B,#result{
+	 letter-spacing: 4px;
+	 margin-left:20px;
+	 margin-bottom:20px;
+	line-height: 1.4;
+	text-align: ".";
+}
+hr{
+border: 1px solid black;
+}
+#main_PlusMinus,#main_Multi{
+	
+	display: inline-block;
+	background-color:#a1b7db;
+}
+
+#main_Multi{
+	
+	
+	
+}
+
+
+#Instructions{
+	
+   position:absolute;
+   top:0;
+   right:1%;
+   background-color:#a2c6e6;
+   width:45%;
+font-size:70%;
+font-weight: 600;
+}
+#DivRes{
+	
+	
+	max-width:50%;
+	
+	
+}
+.hr{
+	max-width:50%;
+	margin :10px 0px 10px 0px;
+	
+	
+}
+.Grey{
+	color:#825f5f;
+}
+
+.Red{
+	
+color:red;	
+	
+}
+.Orang{
+	
+color:#0400ffb3;	
+	
+}
+
+
+/*All the css about CountingBallz*/
+#CountinBallz{
+   position:absolute;
+	top: 60% !important;
+   left:0;
+
+
+   width:990px;
+   height:250px;
+	
+}
+#Ais{
+	position: relative;
+	    height: 65px;
+	background-color:#b9cbe9;
+
+	padding-bottom:15px;
+}
+#Bis{
+	position: relative;
+	    height: 65px;
+	top:0%;
+	padding-bottom:15px;
+	
+}
+/*End default*/
+
+.btn{/*dent around button*/
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    color: rgba(3, 169, 244, 0.54);
+        width: 80px;
+    height: 1px;
+    border-radius: 50%;
+    text-align: center;
+    background: #b9cbe9;
+    /*box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.08);*/
+}
+.btn .fa {/*Button itself*/
+    position: absolute;
+    content: '';
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    vertical-align: middle; 
+    left: 10px;
+    top: 9px;
+    border-radius: 50%;
+    font-size: 40px;
+    /*background-image: -webkit-linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
+    background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.66);
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
+    border-bottom: solid 2px #b5b5b5;*/
+  }
+  
+.btn .fa:active{
+
+}
+.fa-futbol-o:before {
+color:#8779ff;
+    font-size: 70px;
+}
+/*End default*/
+.nums{
+	font-size:10px;
+	
+	
+}
+#Ais .fa span{
+    position: absolute;
+    left: 35%;
+    color: black;
+    top: 0px;
+        font-size: 55px;
+	font-weight:900;
+	
+}
+#Ais .counted .fa-futbol-o:before{
+	
+	color:#6483da;
+	
+	
+}
+#Bis .counted .fa-futbol-o:before{
+	
+	color:#6659cb;
+	
+	
+}
+#Bis .fa span{
+    position: absolute;
+    left: 35%;
+    color: black;
+    top: 0px;
+        font-size: 55px;
+	font-weight:900;
+	
+}
+.Kratu span,.Rdown span,.Total span{
+    position: absolute;
+    left: 35%;
+    color: black;
+    top: 0px;
+    font-size: 50px;
+	font-weight:900;
+}
+#Specials{
+    position: absolute;
+    left: 10%;
+	top: -35%;
+	
+}
+.Kratu .fa-futbol-o:before{
+color:#2a8dd3;
+}
+.Total .fa-futbol-o:before{
+color:#35a366;
+}
+.Rdown .fa-futbol-o:before{
+color:#a33581;
+}
+.Kratu label{
+    position: absolute;
+    left: -10%;
+    top: -75%;
+    color: #153043;
+    font-weight: 900;
+	font-size:80% !important;
+}
+.Rdown label{
+    position: absolute;
+    left: 25% !important;
+    top: -75%;
+    color: #153043;
+    font-weight: 900;
+	font-size:80% !important;
+}
+.Total label{
+    position: absolute;
+    left: 10%;
+    top: -75%;
+    color: #153043;
+    font-weight: 900;
+	font-size:80% !important;
+}
+#Ais label,#Bis label{
+    position: relative;
+	left: 1%;
+    top: 40%;
+    color: #153043;
+    font-weight: 900;
+	font-size:100%;
+}
+}

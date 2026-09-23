@@ -1,0 +1,198 @@
+! version = 2.0
+
+! local concat = newline
+//-Προσθεση
++ [*] (#) (plus|and) (#) [*] {weight=10}
+
+-<set A1=<star2>>
+^<set B1=<star4>>
+^<add R1=<get A1>>
+^<add R1=<get B1>>
+^The result of <star2> <star3> <star4> is <get R1>
+^<set R1=0>
+//-προσθεση 
+
+//-Αφαιρεση
++ [*] (#) (minus) (#) [*] {weight=10}
+
+-<set A2=<star2>>
+^<set B2=<star4>>
+^<add R2=<get A2>>
+^<sub R2=<get B2>>
+^The result of <star2> <star3> <star4> is <get R2>
+^<set R2=0>
+//-αφαιρεση 
+
+//-Πολλαπλασιασμος
++ [*] (#) (times|multiply|multiplied by) (#) [*] {weight=10}
+
+-<set A3=<star2>>
+^<set B3=<star4>>
+^<add R3=<get A3>>
+^<mult R3=<get B3>>
+^The result of <star2> multiplied by <star4> is <get R3>
+^<set R3=0>
+//-πολλαπλασιασμος
+
+
+//-Διαιρεση
++ [*] (#) (divide|div|divided by) (#) [*] {weight=10} // 10 divided by 2
+
+-<set A4=<star2>>
+^<set B4=<star4>>
+^<add R4=<get A4>>
+^<div R4=<get B4>>
+^The result of <star2> divided by <star4> is <get R4>
+^<set R4=0>
+//-διαιρεση
+
+//
+//	-->Ελληνικά
+//
+
+
+//-Προσθεση
++ [*] (#) (σύν|συν|και) (#) [*] {weight=10}
+
+-<set A1=<star2>>
+^<set B1=<star4>>
+^<add R1=<get A1>>
+^<add R1=<get B1>>
+^Το αποτέλεσμα του <star2> <star3> <star4> είναι <get R1>
+^<set R1=0>
+//-προσθεση 
+
+//-Αφαιρεση
++ [*] (#) (πλην|πλήν|μιον|μίον) (#) [*] {weight=10} // 5 μιον 4 
+
+-<set A2=<star2>>
+^<set B2=<star4>>
+^<add R2=<get A2>>
+^<sub R2=<get B2>>
+^Το αποτέλεσμα του <star2> <star3> <star4> είναι <get R2>
+^<set R2=0>
+//-αφαιρεση 
+
+//-Πολλαπλασιασμος
++ [*] (#) (επί|επι|φορές το|φορες το) (#) [*] {weight=10} // 5 επί 5   5.4 επί 4.6
+
+-<set A3=<star2>>
+^<set B3=<star4>>
+^<add R3=<get A3>>
+^<mult R3=<get B3>>
+^Το αποτέλεσμα του <star2> επί <star4> είναι <get R3>
+^<set R3=0>
+//-πολλαπλασιασμος
+
+
+//-Διαιρεση
++ [*] (#) (διά|δια) (#) [*] {weight=10} // 10 δια 2
+
+-<set A4=<star2>>
+^<set B4=<star4>>
+^<add R4=<get A4>>
+^<div R4=<get B4>>
+^Το αποτέλεσμα του <star2> διά <star4> είναι <get R4>
+^<set R4=0>
+//-διαιρεση
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//πείραμα
+
+	
+> object random_correct_Dec javascript
+	var StrA = parseInt(args[0]);
+	var StrB = parseInt(args[1]);
+		console.log("StrA pre= "+StrA);
+		console.log("StrB kkk= "+StrB);
+		StrB=StrB.toString(); //Remove trailing zeroes
+		console.log("StrB uuu= "+StrB);
+		StrA=StrA+"."+StrB;
+		console.log("StrA= "+StrA);
+		alert("random_correct_Dec");
+	var user = rs.currentUser();
+    var Neg = rs.getUservar(user, 'Neg');
+	console.log("Neg= "+Neg);
+	return Neg.then(function(result) { //Promise resolves
+		console.log("result pre= "+result);
+		result=Number(result).toFixed(2);
+		result=result.toString(); //Remove trailing zeroes
+		console.log("result= "+result);
+	
+		if(String(result)==String(StrA)){
+		
+			//alert("Σωστό Σωστό Σωστό απο BRAIN.RIVE");
+
+		}else{
+		
+			//alert("Λαθος Λαθος Λαθος απο BRAIN.RIVE");
+		}
+	return result+" random_correct_Dec "+ String(StrA);
+	
+	});
+< object
+
+
+
+
+
+
+
+//Δεκαδικο ΝΑ το χωριζει σε δυο νουμερα
++ * # p * end [*] {weight=10}
+- <set Neg=<get cor>> <call>random_correct_Dec <star2> <star3></call> // /cor is -2 STAR= 2
+
++ # p * end {weight=10}
+- <set Neg=<get cor>> <call>random_correct_Dec <star1> <star2></call> // /cor is -2 STAR= 2
+
++ *
+-<call>AllCatcher</call>
+> object AllCatcher javascript
+var rand55 = Math.floor(Math.random() * 3);
+if(Lang=="Eng"){
+					if (rand55 == 0) {
+						return "I see, lets continue with your next question now...";
+					} else if(rand55 == 1){
+						return "Okey, how about the following...";
+					}else if(rand55 == 2){
+						return "focus, heres the following question...";
+					}
+}
+if(Lang=="Gre"){
+					if (rand55 == 0) {
+						return "Κατάλαβα, ας συνεχίσουμε...";
+					} else if(rand55 == 1){
+						return "Εντάξη, να προχωρήσουμε όμως...";
+					}else if(rand55 == 2){
+						return "Θα ήθελα να συγκεντρωθείς...";
+					}
+}
+< object
+
